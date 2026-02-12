@@ -1,14 +1,15 @@
 /*
 =============================================================
-Create Database and Schemas
+Criação da base de dados e schemas
 =============================================================
 
 Objetivo do script: 
-  Garantir que a database datawarehouse seja (re)criada do zero. Adicionalmente, cria os três esquemas para arquitetura medallion.
+  Garantir que a database "datawarehouse" seja (re)criada do zero. Adicionalmente, cria os três esquemas para arquitetura medallion.
 
 AVISO:
   Este script apaga todo o database "datawarehouse", junto com dados armazenados. 
 
+=============================================================
 */
 
 
