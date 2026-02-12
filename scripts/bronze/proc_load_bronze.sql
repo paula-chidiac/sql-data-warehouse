@@ -8,7 +8,7 @@ Objetivo: Essa procedure é destinada à camada Bronze. Ela trunca as tabelas e 
 Parâmetros: Nenhum.
 
 Exemplo de uso:
-    CALL bronze.load_bronze;
+    CALL bronze.load_bronze();
 
 ATENÇÃO: lembre-se de atualizar os destinos dos arquivos antes de rodar o script.
 ===============================================================================
