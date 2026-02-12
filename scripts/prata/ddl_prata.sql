@@ -1,0 +1,76 @@
+/*
+===============================================================================
+Script DDL: Criando as tabelas da camada prata
+===============================================================================
+
+Objetivo do script: 
+  Criar as tabelas na camada prata, apagando tabelas já existentes. Adicionalmente, o script cria uma coluna dwh para controle de data e hora de criação da tabela.
+
+===============================================================================
+*/
+
+DROP TABLE IF EXISTS prata.crm_cust_info;
+
+CREATE TABLE prata.crm_cust_info (
+    cst_id INT,
+    cst_key TEXT,
+    cst_firstname TEXT,
+    cst_lastname TEXT,
+    cst_material_status TEXT,
+    cst_gndr TEXT,
+    cst_create_date DATE,
+	  dwh_create_date TIMESTAMP DEFAULT NOW()
+);
+
+DROP TABLE IF EXISTS prata.crm_prd_info;
+
+CREATE TABLE prata.crm_prd_info (
+    prd_id       INT,
+    prd_key      TEXT,
+    prd_nm       TEXT,
+    prd_cost     INT,
+    prd_line     TEXT,
+    prd_start_dt TIMESTAMP,
+    prd_end_dt   TIMESTAMP,
+	dwh_create_date TIMESTAMP DEFAULT NOW()
+);
+
+DROP TABLE IF EXISTS prata.crm_sales_details;
+
+CREATE TABLE prata.crm_sales_details (
+    sls_ord_num  TEXT,
+    sls_prd_key  TEXT,
+    sls_cust_id  INT,
+    sls_order_dt INT,
+    sls_ship_dt  INT,
+    sls_due_dt   INT,
+    sls_sales    INT,
+    sls_quantity INT,
+    sls_price    INT,
+	  dwh_create_date TIMESTAMP DEFAULT NOW()
+);
+
+
+DROP TABLE IF EXISTS prata.erp_loc_a101;
+CREATE TABLE prata.erp_loc_a101 (
+    cid    TEXT,
+    cntry  TEXT,
+	  dwh_create_date TIMESTAMP DEFAULT NOW()
+);
+
+DROP TABLE IF EXISTS prata.erp_cust_az12;
+CREATE TABLE prata.erp_cust_az12 (
+    cid    TEXT,
+    bdate  DATE,
+    gen    TEXT,
+	  dwh_create_date TIMESTAMP DEFAULT NOW()
+);
+
+DROP TABLE IF EXISTS prata.erp_px_cat_g1v2;
+CREATE TABLE prata.erp_px_cat_g1v2 (
+    id           TEXT,
+    cat          TEXT,
+    subcat       TEXT,
+    maintenance  TEXT,
+	  dwh_create_date TIMESTAMP DEFAULT NOW()
+);
