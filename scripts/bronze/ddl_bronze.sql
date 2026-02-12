@@ -12,14 +12,14 @@ Objetivo do script:
 DROP TABLE IF EXISTS bronze.crm_cust_info;
 
 CREATE TABLE bronze.crm_cust_info (
-cst_id INT,
-cst_key NVARCHAR(50),
-cst_lastname NVARCHAR(50),
-cst_material_status NVARCHAR(50),
-cst_gndr NVARCHAR(50),
-cst_create_date DATE
+    cst_id INT,
+    cst_key TEXT,
+    cst_firstname TEXT,
+    cst_lastname TEXT,
+    cst_material_status TEXT,
+    cst_gndr TEXT,
+    cst_create_date DATE
 );
-
 
 DROP TABLE IF EXISTS bronze.crm_prd_info;
 
