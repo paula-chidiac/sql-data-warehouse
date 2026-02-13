@@ -28,7 +28,7 @@ SELECT
 		ci.cst_create_date AS create_date
 FROM prata.crm_cust_info ci
 LEFT JOIN prata.erp_cust_az12 ca ON ci.cst_key = ca.cid
-LEFT JOIN prata.erp_loc_a101 loc ON ci.cst_key = loc.cid
+LEFT JOIN prata.erp_loc_a101 loc ON ci.cst_key = loc.cid;
 
 DROP VIEW IF EXISTS gold.dim_products;
 CREATE VIEW gold.dim_products AS 
