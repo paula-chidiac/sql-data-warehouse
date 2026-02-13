@@ -1,20 +1,20 @@
 /*
 ===============================================================================
-Criação de Procedure: Carregamento da camada Prata
+Criação de Procedure: Carregamento da camada prata
 ===============================================================================
 
-Objetivo: Essa procedure é destinada à camada Prata. Ela trunca as tabelas e insere dados vindos da camada bronze.
+Objetivo: Essa procedure é destinada à camada prata. Ela trunca as tabelas e insere dados vindos da camada bronze.
 
 Parâmetros: Nenhum.
 
 Exemplo de uso:
-    CALL prata.load_prata();
+    CALL silver.load_silver();
 
 ATENÇÃO: lembre-se de atualizar os destinos dos arquivos antes de rodar o script.
 ===============================================================================
 */
 
-CREATE OR REPLACE PROCEDURE prata.load_prata()
+CREATE OR REPLACE PROCEDURE silver.load_silver()
 LANGUAGE plpgsql
 AS $$
 BEGIN -- Início da procedure
@@ -31,7 +31,7 @@ BEGIN -- Início da procedure
 		batch_start_time := NOW();
 		
 		RAISE NOTICE '================================================';
-		RAISE NOTICE 'Carregando a Camada Prata';
+		RAISE NOTICE 'Carregando a Camada silver';
 		RAISE NOTICE '================================================';
 		
 	    RAISE NOTICE '------------------------------------------------';
@@ -40,11 +40,11 @@ BEGIN -- Início da procedure
 
 
 		start_time := NOW();
-		RAISE NOTICE '>> Truncando prata.crm_cust_info';
-		TRUNCATE TABLE prata.crm_cust_info;
-		RAISE NOTICE '>> Copiando dados para prata.crm_cust_info';
+		RAISE NOTICE '>> Truncando silver.crm_cust_info';
+		TRUNCATE TABLE silver.crm_cust_info;
+		RAISE NOTICE '>> Copiando dados para silver.crm_cust_info';
 		
-		INSERT INTO prata.crm_cust_info (
+		INSERT INTO silver.crm_cust_info (
 		cst_id,
 		cst_key,
 		cst_firstname,
@@ -84,10 +84,10 @@ BEGIN -- Início da procedure
 		RAISE NOTICE '>> Duração do carregamento da tabela: % seconds', duration;
 
 		start_time := NOW();
-		RAISE NOTICE '>> Truncando prata.crm_prd_info';
-		TRUNCATE TABLE prata.crm_prd_info;
-		RAISE NOTICE '>> Copiando dados para prata.crm_prd_info';
-		INSERT INTO prata.crm_prd_info (
+		RAISE NOTICE '>> Truncando silver.crm_prd_info';
+		TRUNCATE TABLE silver.crm_prd_info;
+		RAISE NOTICE '>> Copiando dados para silver.crm_prd_info';
+		INSERT INTO silver.crm_prd_info (
 			prd_id,
 			cat_id,
 			prd_key,
@@ -120,10 +120,10 @@ BEGIN -- Início da procedure
 		RAISE NOTICE '>> -------------';
 
 		start_time:= NOW();
-		RAISE NOTICE '>> Truncando prata.crm_sales_details';
-		TRUNCATE TABLE prata.crm_sales_details;
-		RAISE NOTICE '>> Copiando dados para prata.crm_sales_details';
-		INSERT INTO prata.crm_sales_details (
+		RAISE NOTICE '>> Truncando silver.crm_sales_details';
+		TRUNCATE TABLE silver.crm_sales_details;
+		RAISE NOTICE '>> Copiando dados para silver.crm_sales_details';
+		INSERT INTO silver.crm_sales_details (
 					sls_ord_num,
 					sls_prd_key,
 					sls_cust_id,
@@ -169,10 +169,10 @@ BEGIN -- Início da procedure
 		RAISE NOTICE '------------------------------------------------';
 
 		start_time:= NOW();
-		RAISE NOTICE '>> Truncando prata.erp_cust_az12';
-		TRUNCATE TABLE prata.erp_cust_az12;
-		RAISE NOTICE '>> Copiando dados para prata.erp_cust_az12';
-		INSERT INTO prata.erp_cust_az12 (
+		RAISE NOTICE '>> Truncando silver.erp_cust_az12';
+		TRUNCATE TABLE silver.erp_cust_az12;
+		RAISE NOTICE '>> Copiando dados para silver.erp_cust_az12';
+		INSERT INTO silver.erp_cust_az12 (
 					cid,
 					bdate,
 					gen
@@ -199,10 +199,10 @@ BEGIN -- Início da procedure
 		RAISE NOTICE '>> -------------';
 
 		start_time := NOW();
-		RAISE NOTICE '>> Truncando prata.erp_loc_a101';
-		TRUNCATE TABLE prata.erp_loc_a101;
-		RAISE NOTICE '>> Copiando dados para prata.erp_loc_a101';
-		INSERT INTO prata.erp_loc_a101 (cid, cntry)
+		RAISE NOTICE '>> Truncando silver.erp_loc_a101';
+		TRUNCATE TABLE silver.erp_loc_a101;
+		RAISE NOTICE '>> Copiando dados para silver.erp_loc_a101';
+		INSERT INTO silver.erp_loc_a101 (cid, cntry)
 		
 		SELECT
 			REPLACE(cid, '-','') cid,
@@ -220,10 +220,10 @@ BEGIN -- Início da procedure
 		RAISE NOTICE '>> -------------';
 
 		start_time := NOW();
-		RAISE NOTICE '>> Truncando prata.erp_px_cat_g1v2';
-		TRUNCATE TABLE prata.erp_px_cat_g1v2;
-		RAISE NOTICE '>> Copiando dados para prata.erp_px_cat_g1v2';
-		INSERT INTO prata.erp_px_cat_g1v2 (id, cat, subcat, maintenance)
+		RAISE NOTICE '>> Truncando silver.erp_px_cat_g1v2';
+		TRUNCATE TABLE silver.erp_px_cat_g1v2;
+		RAISE NOTICE '>> Copiando dados para silver.erp_px_cat_g1v2';
+		INSERT INTO silver.erp_px_cat_g1v2 (id, cat, subcat, maintenance)
 		
 		SELECT
 			TRIM(id) AS id,
@@ -239,7 +239,7 @@ BEGIN -- Início da procedure
 		
 		batch_end_time := NOW();
 		duration := EXTRACT(EPOCH FROM (batch_end_time - batch_start_time))::INT;
-		RAISE NOTICE '>> Duração total do carregamento da camada Prata: % seconds', duration;
+		RAISE NOTICE '>> Duração total do carregamento da camada silver: % seconds', duration;
     	RAISE NOTICE '>> -------------';
 		
 	EXCEPTION
