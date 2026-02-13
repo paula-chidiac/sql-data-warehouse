@@ -56,7 +56,7 @@ SELECT
     sd.sls_order_dt AS order_date,
     sd.sls_ship_dt  AS shipping_date,
     sd.sls_due_dt   AS due_date,
-    sd.sls_sales    AS sale_total,
+    sd.sls_sales    AS sales_amount,
     sd.sls_quantity AS quantity,
     sd.sls_price    AS price
 FROM prata.crm_sales_details sd
