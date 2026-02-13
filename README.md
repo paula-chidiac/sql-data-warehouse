@@ -26,6 +26,9 @@ Responsável pela limpeza, padronização, normalização e aplicação de regra
 ### Gold 
 Contém dados modelados em **Star Schema**, estruturados para análises, relatórios e consultas analíticas de alto desempenho.
 
+![Arquitetura Medallion](docs/arquitetura_medallion.png)
+
+
 ---
 
 ## 📖 Visão Geral do Projeto
