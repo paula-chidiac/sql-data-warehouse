@@ -75,7 +75,8 @@ BEGIN -- Início da procedure
 				*,
 				ROW_NUMBER() OVER(PARTITION BY cst_id ORDER BY cst_create_date DESC) as flag_ultimo
 			FROM bronze.crm_cust_info 
-			)
+			WHERE cst_id IS NOT NULL
+			) t
 		WHERE flag_ultimo = 1;
 		
 		end_time := NOW();
