@@ -9,9 +9,9 @@ Objetivo do script:
 ===============================================================================
 */
 
-DROP TABLE IF EXISTS prata.crm_cust_info;
+DROP TABLE IF EXISTS silver.crm_cust_info;
 
-CREATE TABLE prata.crm_cust_info (
+CREATE TABLE silver.crm_cust_info (
     cst_id INT,
     cst_key TEXT,
     cst_firstname TEXT,
@@ -22,9 +22,9 @@ CREATE TABLE prata.crm_cust_info (
 	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
-DROP TABLE IF EXISTS prata.crm_prd_info;
+DROP TABLE IF EXISTS silver.crm_prd_info;
 
-CREATE TABLE prata.crm_prd_info (
+CREATE TABLE silver.crm_prd_info (
     prd_id       INT,
 	cat_id		 TEXT,
     prd_key      TEXT,
@@ -36,9 +36,9 @@ CREATE TABLE prata.crm_prd_info (
 	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
-DROP TABLE IF EXISTS prata.crm_sales_details;
+DROP TABLE IF EXISTS silver.crm_sales_details;
 
-CREATE TABLE prata.crm_sales_details (
+CREATE TABLE silver.crm_sales_details (
     sls_ord_num  TEXT,
     sls_prd_key  TEXT,
     sls_cust_id  INT,
@@ -52,23 +52,23 @@ CREATE TABLE prata.crm_sales_details (
 );
 
 
-DROP TABLE IF EXISTS prata.erp_loc_a101;
-CREATE TABLE prata.erp_loc_a101 (
+DROP TABLE IF EXISTS silver.erp_loc_a101;
+CREATE TABLE silver.erp_loc_a101 (
     cid    TEXT,
     cntry  TEXT,
 	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
-DROP TABLE IF EXISTS prata.erp_cust_az12;
-CREATE TABLE prata.erp_cust_az12 (
+DROP TABLE IF EXISTS silver.erp_cust_az12;
+CREATE TABLE silver.erp_cust_az12 (
     cid    TEXT,
     bdate  DATE,
     gen    TEXT,
 	  dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
-DROP TABLE IF EXISTS prata.erp_px_cat_g1v2;
-CREATE TABLE prata.erp_px_cat_g1v2 (
+DROP TABLE IF EXISTS silver.erp_px_cat_g1v2;
+CREATE TABLE silver.erp_px_cat_g1v2 (
     id           TEXT,
     cat          TEXT,
     subcat       TEXT,
