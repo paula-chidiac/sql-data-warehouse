@@ -3,7 +3,7 @@
 ## Overview
 A Camada Ouro é a representação dos dados no nível de negócio, estruturada para apoiar consultas analíticas e facilitar a elaboração de relatórios. Ela consiste em **tabelas dimensão** e **tabelas fato**.
 
-### 1. **ouro.dim_customers**
+### 1. **gold.dim_customers**
 - **Objetivo:** Fornece detalhes de clientes enriquecidos com dados demográficos e geográficos.
 
 | Coluna          | Tipo do dado | Descrição                                                                                      |
@@ -21,7 +21,7 @@ A Camada Ouro é a representação dos dados no nível de negócio, estruturada 
 
 ---
 
-### 2. **ouro.dim_products**
+### 2. **fold.dim_products**
 - **Objetivo:** Fornece informações sobre produtos e seus atributos.
 
 | Coluna               | Tipo do dado | Descrição                                                                                                  |
@@ -40,7 +40,7 @@ A Camada Ouro é a representação dos dados no nível de negócio, estruturada 
 
 ---
 
-### 3. **ouro.fact_sales**
+### 3. **gold.fact_sales**
 
 - **Objetivo:** Armazena dados transacionais para análises futuras.
 
