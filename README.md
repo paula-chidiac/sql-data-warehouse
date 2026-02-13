@@ -48,9 +48,7 @@ O modelo final foi estruturado para suportar análises como:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- PostgreSQL  
-- SQL  
-- Modelagem Dimensional (Star Schema)  
+- PostgreSQL    
 - Draw.io para diagramas de arquitetura e modelagem  
 - Git para versionamento  
 
