@@ -19,19 +19,20 @@ CREATE TABLE prata.crm_cust_info (
     cst_marital_status TEXT,
     cst_gndr TEXT,
     cst_create_date DATE,
-	  dwh_create_date TIMESTAMP DEFAULT NOW()
+	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
 DROP TABLE IF EXISTS prata.crm_prd_info;
 
 CREATE TABLE prata.crm_prd_info (
     prd_id       INT,
+	cat_id		 TEXT,
     prd_key      TEXT,
     prd_nm       TEXT,
     prd_cost     INT,
     prd_line     TEXT,
-    prd_start_dt TIMESTAMP,
-    prd_end_dt   TIMESTAMP,
+    prd_start_dt DATE,
+    prd_end_dt   DATE,
 	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
@@ -41,13 +42,13 @@ CREATE TABLE prata.crm_sales_details (
     sls_ord_num  TEXT,
     sls_prd_key  TEXT,
     sls_cust_id  INT,
-    sls_order_dt INT,
-    sls_ship_dt  INT,
-    sls_due_dt   INT,
+    sls_order_dt DATE,
+    sls_ship_dt  DATE,
+    sls_due_dt   DATE,
     sls_sales    INT,
     sls_quantity INT,
     sls_price    INT,
-	  dwh_create_date TIMESTAMP DEFAULT NOW()
+	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
 
@@ -55,7 +56,7 @@ DROP TABLE IF EXISTS prata.erp_loc_a101;
 CREATE TABLE prata.erp_loc_a101 (
     cid    TEXT,
     cntry  TEXT,
-	  dwh_create_date TIMESTAMP DEFAULT NOW()
+	dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
 DROP TABLE IF EXISTS prata.erp_cust_az12;
