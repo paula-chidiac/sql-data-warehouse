@@ -112,7 +112,7 @@ BEGIN -- Início da procedure
 					END AS prd_line,
 			CAST (prd_start_dt AS DATE) AS prd_start_dt,
 			CAST (LEAD (prd_start_dt) OVER (PARTITION BY prd_key ORDER BY prd_start_dt ASC)- INTERVAL '1 day' AS DATE) AS prd_end
-		FROM prata.crm_prd_info;
+		FROM bronze.crm_prd_info;
 		
 		end_time := NOW();
 		duration := EXTRACT(EPOCH FROM (end_time - start_time))::INT;
