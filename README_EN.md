@@ -49,8 +49,6 @@ The final model supports analysis such as:
 ## 🛠️ Technologies Used
 
 - PostgreSQL  
-- SQL  
-- Dimensional Modeling (Star Schema)  
 - Draw.io for architecture and data modeling diagrams  
 - Git for version control  
 
