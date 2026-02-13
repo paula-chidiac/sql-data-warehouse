@@ -82,4 +82,4 @@ A documentação completa das convenções está disponível na pasta `docs`.
 
 Este projeto foi inspirado no conteúdo educacional do **Data With Baraa**.
 
-A implementação técnica, adaptação para PostgreSQL e demais decisões arquiteturais foram desenvolvidas de forma independente.  
+A implementação técnica, adaptação para PostgreSQL e demais decisões foram desenvolvidas de forma independente.  
