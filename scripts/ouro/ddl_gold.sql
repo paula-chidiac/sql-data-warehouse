@@ -24,7 +24,7 @@ SELECT
 			WHEN ci.cst_gndr <> 'N/A' THEN ci.cst_gndr -- CRM é a fonte primária
 			ELSE COALESCE(ca.gen, 'N/A')
 			END AS gender,
-		ca.bdate AS birth_date,
+		ca.bdate AS birthdate,
 		ci.cst_create_date AS create_date
 FROM silver.crm_cust_info ci
 LEFT JOIN silver.erp_cust_az12 ca ON ci.cst_key = ca.cid
