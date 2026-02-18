@@ -26,9 +26,9 @@ SELECT
 			END AS gender,
 		ca.bdate AS birth_date,
 		ci.cst_create_date AS create_date
-FROM prata.crm_cust_info ci
-LEFT JOIN prata.erp_cust_az12 ca ON ci.cst_key = ca.cid
-LEFT JOIN prata.erp_loc_a101 loc ON ci.cst_key = loc.cid;
+FROM silver.crm_cust_info ci
+LEFT JOIN silver.erp_cust_az12 ca ON ci.cst_key = ca.cid
+LEFT JOIN silver.erp_loc_a101 loc ON ci.cst_key = loc.cid;
 
 DROP VIEW IF EXISTS gold.dim_products;
 CREATE VIEW gold.dim_products AS 
@@ -44,8 +44,8 @@ SELECT
     pi.prd_cost AS cost,
     pi.prd_line AS product_line,
     pi.prd_start_dt AS start_date
-FROM prata.crm_prd_info pi
-LEFT JOIN prata.erp_px_cat_g1v2 pc ON pi.cat_id = pc.id WHERE pi.prd_end_dt IS NULL; -- Ignora produtos com produção encerrada
+FROM silver.crm_prd_info pi
+LEFT JOIN silver.erp_px_cat_g1v2 pc ON pi.cat_id = pc.id WHERE pi.prd_end_dt IS NULL; -- Ignora produtos com produção encerrada
 
 DROP VIEW IF EXISTS gold.fact_sales;
 CREATE VIEW gold.fact_sales AS
@@ -59,6 +59,6 @@ SELECT
     sd.sls_sales    AS sales_amount,
     sd.sls_quantity AS quantity,
     sd.sls_price    AS price
-FROM prata.crm_sales_details sd
+FROM silver.crm_sales_details sd
 LEFT JOIN gold.dim_products pr ON sd.sls_prd_key = pr.product_number
 LEFT JOIN gold.dim_customers cs ON sd.sls_cust_id = cS.customer_id;
