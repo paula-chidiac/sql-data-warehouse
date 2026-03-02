@@ -1,11 +1,11 @@
-# Data Warehouse & Analytics
+# Medallion Data Warehouse 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-Data_Engineering-blue)
 ![ETL](https://img.shields.io/badge/ETL-Pipeline-success)
 ![Architecture](https://img.shields.io/badge/Architecture-Medallion-orange)
 
 
-Bem-vindo ao repositório do projeto de **Data Warehouse e Analytics**. Aqui, você encontra a construção de um Data Warehouse utilizando arquitetura medallion, com foco em modelagem dimensional, qualidade de dados e suporte a análises. 
+Bem-vindo ao repositório do projeto de **Medallion Data Warehouse**. Aqui, você encontra a construção de um Data Warehouse utilizando arquitetura medallion, com foco em modelagem dimensional, qualidade de dados e suporte a análises. 
 
 A implementação segue boas práticas de Data Engineering, organização de pipelines ETL e padronização de nomenclatura.
 
