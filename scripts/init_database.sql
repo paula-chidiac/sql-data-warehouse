@@ -33,5 +33,5 @@ CREATE DATABASE datawarehouse;
 --- Cria os schemas
 
 CREATE SCHEMA bronze;
-CREATE SCHEMA prata;
-CREATE SCHEMA ouro;
+CREATE SCHEMA silver;
+CREATE SCHEMA gold;
